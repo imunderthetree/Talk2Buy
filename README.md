@@ -4,8 +4,8 @@ A comprehensive toolkit for discovering craft materials, converting 2D images to
 
 ## 👥 Contributors
 
-- **Yusuf Mohammad** - Project Co-creator
-- **Rawan Ibrahim** - Project Co-creator
+- **Yusuf Mohammad** - [@imunderthetree](https://github.com/imunderthetree)
+- **Rawan Ibrahim** - [@Rawan-Mahaba](https://github.com/Rawan-Mahaba)
 
 ## 🔧 Project Overview
 
@@ -344,7 +344,7 @@ We welcome contributions! Please feel free to submit pull requests or open issue
 
 ## 📞 Contact
 
-For questions or collaboration opportunities, please reach out to either contributor.
+For questions or collaboration opportunities, please reach out to either contributor through their GitHub profiles.
 
 ---
 
