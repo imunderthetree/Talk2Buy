@@ -11,9 +11,40 @@ A comprehensive toolkit for discovering craft materials, converting 2D images to
 
 Talk2Buy consists of three integrated components that work together in a seamless pipeline:
 
-1. **Craft Material Scraper** - Research and discover craft materials with image editing capabilities
-2. **Image to 3D Model Generator** - Convert 2D images into 3D models using AI-powered depth estimation
-3. **3D Process Visualizer** - Interactive 3D data visualization and processing
+1. **Material Scraper** - Research and discover craft materials with image editing capabilities
+2. **Model 2D to 3D** - Convert 2D images into 3D models using AI-powered depth estimation
+3. **3D Process After 2D to 3D** - Interactive 3D data visualization and processing
+
+## 📁 Project Structure
+
+```
+Talk2Buy/
+├── (1) Material Scraper/
+├── (2) Model 2D to 3D/
+├── (3) 3D process After 2D to 3D/
+├── LICENSE
+└── README.md
+```
+
+### Component Details:
+
+**`(1) Material Scraper/`**
+- Main craft material scraper application
+- Image editor with 20+ effects
+- YouTube tutorial integration
+- Documentation: `Craft Material.txt`
+
+**`(2) Model 2D to 3D/`** 
+- AI-powered 2D to 3D converter
+- YOLO + MiDaS integration
+- Multiple export formats
+- Documentation: `Model (Imageto3D).txt`
+
+**`(3) 3D process After 2D to 3D/`**
+- Interactive 3D visualization
+- Jupyter notebook interface
+- Processing and export tools
+- Documentation: `3D process.txt`
 
 ## 🚀 Quick Start
 
@@ -25,32 +56,37 @@ Install all required dependencies with:
 # Core dependencies for all components
 pip install opencv-python numpy matplotlib PyQt5 requests beautifulsoup4 selenium networkx
 
-# For Craft Material Scraper
+# For Material Scraper notebook
 pip install serpapi
 
-# For Image to 3D Model Generator
+# For 2D to 3D Model Generator notebook
 pip install torch torchvision trimesh open3d scikit-image ultralytics timm
 
-# For 3D Process Visualizer (if using Jupyter)
+# For 3D Process Visualizer notebook
 pip install jupyter
 ```
 
 ### Running the Applications
 
 ```bash
-# Launch craft material scraper
-python craft_material_app.py
+# Navigate to each component folder and run:
 
-# Launch 2D to 3D converter
-python image_to_3d_app.py
+# 1. Material Scraper
+cd "(1) Material Scraper"
+jupyter craft_material_app.ipynb
 
-# Launch 3D visualizer
+# 2. 2D to 3D Converter  
+cd "(2) Model 2D to 3D"
+jupyter image_to_3d_app.ipynb
+
+# 3. 3D Processor
+cd "(3) 3D process After 2D to 3D"
 jupyter notebook 3D_process.ipynb
 ```
 
 ## 📋 Component Details
 
-### 1. Craft Material Scraper 🔍
+### 1. Material Scraper 🔍
 
 **Purpose**: Search, discover, and edit craft materials with integrated YouTube tutorial finder.
 
@@ -83,7 +119,7 @@ jupyter notebook 3D_process.ipynb
 - `Ctrl+S`: Save image in editor
 - `Ctrl+Z`: Reset image in editor
 
-### 2. Image to 3D Model Generator 🤖
+### 2. Model 2D to 3D 🤖
 
 **Purpose**: Convert 2D images into 3D models using advanced AI techniques.
 
@@ -117,7 +153,7 @@ jupyter notebook 3D_process.ipynb
 | Vehicles    | 0.5     | 3         | 9      | 1.8             |
 | Objects     | 1.0     | 7         | 8      | 2.2             |
 
-### 3. 3D Process Visualizer 📊
+### 3. 3D Process After 2D to 3D 📊
 
 **Purpose**: Interactive 3D data visualization and processing in Jupyter notebooks.
 
@@ -154,7 +190,7 @@ graph TD
 ```
 
 ### Typical Use Case:
-1. **Research Phase**: Use the Craft Material Scraper to find materials and inspiration
+1. **Research Phase**: Use the Material Scraper to find materials and inspiration
 2. **Image Preparation**: Edit and enhance images using the built-in editor
 3. **3D Generation**: Convert selected images to 3D models using AI-powered depth estimation
 4. **Processing**: Visualize and refine 3D models using the interactive processor
@@ -165,9 +201,9 @@ graph TD
 
 | Component | Core Technologies |
 |-----------|------------------|
-| **Craft Scraper** | PyQt5 GUI, BeautifulSoup4 + Selenium, OpenCV, SerpAPI |
-| **Image to 3D** | YOLOv5s, MiDaS, Open3D, Trimesh |
-| **3D Visualizer** | Matplotlib 3D, PyQt5, NumPy, Poly3DCollection |
+| **Material Scraper** | PyQt5 GUI, BeautifulSoup4 + Selenium, OpenCV, SerpAPI |
+| **Model 2D to 3D** | YOLOv5s, MiDaS, Open3D, Trimesh |
+| **3D Process** | Matplotlib 3D, PyQt5, NumPy, Poly3DCollection |
 
 ### AI Pipeline Details
 
@@ -188,22 +224,6 @@ graph TD
 - Poisson surface reconstruction
 - Mesh smoothing and optimization
 - Multiple export format support
-
-## 📁 Project Structure
-
-```
-talk2buy/
-├── craft_material_app.py          # Main craft scraper application
-├── image_to_3d_app.py             # 2D to 3D converter
-├── 3D_process.ipynb               # 3D visualization notebook
-├── docs/
-│   ├── Craft Material.txt         # Craft scraper documentation
-│   ├── Model (Imageto3D).txt      # 2D-3D converter guide
-│   └── 3D process.txt             # 3D visualizer help
-├── examples/                      # Sample data and outputs
-├── models/                        # Pre-trained model cache
-└── README.md                      # This file
-```
 
 ## 🎯 Key Features Highlight
 
@@ -264,7 +284,7 @@ talk2buy/
 
 ```python
 # 1. Search for materials
-# Launch craft_material_app.py
+# Launch Material Scraper
 # Search: "cotton fabric"
 # Filter: "fabric"
 # View results and tutorials
@@ -275,14 +295,14 @@ talk2buy/
 # Save enhanced image
 
 # 3. Generate 3D model
-# Launch image_to_3d_app.py
+# Launch Model 2D to 3D
 # Select enhanced image
 # Choose "Auto (YOLO)" ROI
 # Set parameters based on object type
 # Generate 3D model
 
 # 4. Visualize and process
-# Open 3D_process.ipynb
+# Open 3D Process notebook
 # Load generated model
 # Apply visualization settings
 # Export final result
@@ -307,15 +327,25 @@ talk2buy/
 - Watermark: 50% opacity
 - Text Overlay: Size 30-40
 
-## 📄 Documentation
+## 📖 Documentation
 
-Each component includes detailed help files:
-- `Craft Material.txt` - Complete scraper guide
-- `Model (Imageto3D).txt` - 3D conversion manual
-- `3D process.txt` - Visualization help
+Each component includes detailed documentation in its respective folder:
+- `(1) Material Scraper/Craft Material.txt` - Complete scraper guide
+- `(2) Model 2D to 3D/Model (Imageto3D).txt` - 3D conversion manual  
+- `(3) 3D process After 2D to 3D/3D process.txt` - Visualization help
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-##
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit pull requests or open issues for bugs and feature requests.
+
+## 📞 Contact
+
+For questions or collaboration opportunities, please reach out to either contributor.
+
+---
+
+*This project demonstrates the integration of web scraping, computer vision, and 3D processing technologies to create a comprehensive craft-to-3D modeling pipeline.*
