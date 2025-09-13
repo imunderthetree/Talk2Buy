@@ -1,0 +1,140 @@
+=== 3D Model Generator Help File ===
+
+[OVERVIEW]
+This application converts 2D images into 3D models using:
+- YOLO object detection for ROI selection
+- MiDaS depth estimation
+- Open3D and trimesh for 3D reconstruction
+- PyQt5 for the graphical interface
+
+[DEPENDENCIES]
+Install all required packages with these commands:
+
+# Core dependencies
+pip install opencv-python numpy matplotlib PyQt5 torch torchvision trimesh open3d scikit-image
+
+# YOLO support
+pip install ultralytics
+
+# MiDaS support
+pip install timm
+
+[YOLO IMPLEMENTATION]
+The YOLO object detection system is used for automatic ROI selection:
+
+1. Model Loading:
+   - Uses YOLOv5s (smallest version)
+   - Loaded from Ultralytics repository
+
+2. How It Works:
+   - Detects objects in input image
+   - Selects highest-confidence detection
+   - Adds 10% padding around bounding box
+   - Uses object class to determine 3D parameters
+   - Falls back to traditional ROI selection if no detections
+
+Key Functions:
+- detect_objects_with_yolo(): Runs YOLO inference
+- yolo_based_roi_selection(): Main ROI logic
+- get_object_specific_params(): Class-based parameters
+
+[DEPTH ESTIMATION]
+Uses Intel's MiDaS models:
+
+1. Automatic Model Selection:
+   - DPT_Large: For high-res, sharp images
+   - DPT_Hybrid: For medium-quality images
+   - MiDaS_small: Default for low-quality
+
+2. Depth Processing:
+   - Normalizes depth values
+   - Applies bilateral filtering
+   - Clips outliers (2nd-98th percentile)
+
+[3D RECONSTRUCTION]
+Conversion process:
+
+1. Point Cloud Generation:
+   - Creates 3D points from depth+RGB
+   - Scales coordinates appropriately
+
+2. Mesh Generation:
+   - Poisson surface reconstruction
+   - Smoothing and outlier removal
+   - Mesh optimization
+
+Supported Output Formats:
+- .ply (default)
+- .obj
+- .stl
+- .glb
+
+[GUI CONTROLS]
+Left Panel:
+1. Input Settings:
+   - Image selection
+   - File browser
+
+2. ROI Selection:
+   - Auto (YOLO)
+   - Auto (Traditional)
+   - Manual
+
+3. Output Settings:
+   - Mesh/Point Cloud
+   - Output directory
+
+4. 3D Parameters:
+   - Depth scale
+   - Smoothing
+   - Detail level
+   - Outlier removal
+
+Right Panel Tabs:
+1. Input Image: Shows original with ROI
+2. Depth Map: Visualizes depth estimation
+3. Results: Displays generation summary
+
+[USAGE INSTRUCTIONS]
+1. Select input image
+2. Choose ROI method (Auto-YOLO recommended)
+3. Set output parameters
+4. Adjust 3D settings if needed
+5. Click "Generate 3D Model"
+6. View results in output tabs
+
+[TROUBLESHOOTING]
+Common Issues:
+1. CUDA not available:
+   - Will automatically fall back to CPU
+   - Check GPU drivers if needed
+
+2. Memory errors:
+   - Try smaller images
+   - Use MiDaS_small model
+
+3. Poor quality results:
+   - Increase mesh detail
+   - Adjust depth scale
+   - Try different ROI selection
+
+[PARAMETER GUIDE]
+Recommended Settings:
+
+For People:
+- Scale Z: 0.6
+- Smoothing: 5
+- Detail: 9
+- Outlier: 2.0
+
+For Vehicles:
+- Scale Z: 0.5
+- Smoothing: 3
+- Detail: 9
+- Outlier: 1.8
+
+For Objects:
+- Scale Z: 1.0
+- Smoothing: 7
+- Detail: 8
+- Outlier: 2.2

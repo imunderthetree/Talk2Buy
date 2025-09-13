@@ -1,0 +1,119 @@
+[OVERVIEW]
+This application provides a comprehensive tool for:
+- Searching craft materials and fabrics
+- Finding related YouTube tutorials
+- Editing images with various filters and effects
+- Scraping packaging materials from websites
+- Visualizing statistics about materials and videos
+
+[DEPENDENCIES]
+Install all required packages with this command:
+pip install opencv-python numpy matplotlib PyQt5 requests beautifulsoup4 selenium networkx serpapi
+
+[MAIN FEATURES]
+
+1. Craft Search Tab:
+   - Search for materials by name and craft type
+   - Filter results by fabric or crafting supplies
+   - View results with images and prices
+   - Search for related YouTube videos
+
+2. Image Editor Tab:
+   - Open, edit, and save images
+   - Apply 20+ different image effects/filters
+   - Adjust parameters for each operation
+   - Reset to original image or save edits
+
+3. Packaging Tab:
+   - Scrape packaging materials from websites
+   - View scraped results in organized format
+   - Customize target URLs
+
+4. Statistics Tab:
+   - Visualize color distributions
+   - View material type breakdowns
+   - Analyze price distributions
+   - Compare video statistics
+
+[IMAGE EDITOR OPERATIONS]
+Available image operations:
+1. Basic Effects:
+   - Grayscale, Blur, Sharpen
+   - Edge Detection, Emboss
+   - Sepia, Cartoon Effect
+   - Pencil Sketch, Oil Painting
+
+2. Geometric Transformations:
+   - Rotate, Flip
+   - Resize, Crop
+
+3. Color Adjustments:
+   - Brightness/Contrast
+   - Color Balance (RGB)
+   - Threshold, Histogram Equalization
+
+4. Text/Watermark:
+   - Text Overlay with customization
+   - Watermark with position control
+
+[USAGE INSTRUCTIONS]
+
+1. Craft Search:
+   - Enter material name (required)
+   - Optional: Enter craft type
+   - Select search options
+   - Click "Search" button
+
+2. Image Editor:
+   - Click "Open" to load image
+   - Select operation from dropdown
+   - Adjust parameters if needed
+   - Click "Apply" to see changes
+   - Use "Reset" or "Save" as needed
+
+3. Packaging Scraper:
+   - Enter target URL
+   - Click "Scrape" button
+   - View results in text area
+
+[TROUBLESHOOTING]
+
+Common Issues:
+1. No search results:
+   - Check internet connection
+   - Try different search terms
+   - Verify API key if using SerpAPI
+
+2. Image editing problems:
+   - Ensure image is loaded first
+   - Try smaller images for complex operations
+   - Check file permissions for saving
+
+3. Scraping failures:
+   - Verify URL is correct
+   - Check if website blocks scraping
+   - Try different target websites
+
+[KEYBOARD SHORTCUTS]
+- Enter: Trigger search (in search fields)
+- Ctrl+O: Open image (in editor)
+- Ctrl+S: Save image (in editor)
+- Ctrl+Z: Reset image (in editor)
+
+[PARAMETER GUIDE]
+
+Recommended Settings:
+1. For fabric photos:
+   - Blur: Kernel size 5-7
+   - Color Balance: R+10, G+5, B+0
+   - Brightness: +10 to +20
+
+2. For craft supplies:
+   - Sharpen: Strength 3-5
+   - Contrast: +10 to +15
+   - Edge Detection: Canny (100,200)
+
+3. For packaging images:
+   - Resize: 70-80% of original
+   - Watermark: 50% opacity
+   - Text Overlay: Size 30-40
