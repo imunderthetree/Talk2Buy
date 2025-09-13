@@ -4,8 +4,8 @@ A comprehensive toolkit for discovering craft materials, converting 2D images to
 
 ## 👥 Contributors
 
-- **Yusuf Mohammad** - Project Co-creator
-- **Rawan Ibrahim** - Project Co-creator
+- **[Your Name]** - Project Co-creator
+- **[Colleague Name]** - Project Co-creator
 
 ## 🔧 Project Overview
 
